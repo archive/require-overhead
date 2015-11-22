@@ -524,6 +524,7 @@ require([
   dep1.exec();
   dep2.exec();
   dep3.exec();
+  window.no = 'yes';
 });
 
 define("app", function(){});

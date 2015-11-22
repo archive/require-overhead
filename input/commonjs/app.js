@@ -5,3 +5,4 @@ var dep3 = require('./dep3');
 dep1.exec();
 dep2.exec();
 dep3.exec();
+window.no = 'yes';

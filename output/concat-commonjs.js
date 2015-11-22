@@ -4,7 +4,8 @@ var dep3 = require('./dep3');
 
 dep1.exec();
 dep2.exec();
-dep3.exec();var pub = {
+dep3.exec();
+window.no = 'yes';var pub = {
   exec: function () {
     console.log('dep1');
   }

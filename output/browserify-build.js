@@ -6,6 +6,7 @@ var dep3 = require('./dep3');
 dep1.exec();
 dep2.exec();
 dep3.exec();
+window.no = 'yes';
 },{"./dep1":2,"./dep2":3,"./dep3":8}],2:[function(require,module,exports){
 var pub = {
   exec: function () {
