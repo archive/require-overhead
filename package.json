@@ -4,12 +4,13 @@
   "description": "Comparing script overhead when using RequireJS, Browserify, webpack, etc",
   "main": "index.js",
   "scripts": {
-    "build": "npm run browserify && npm run webpack && npm run requirejs && npm run concat",
+    "build": "npm run browserify && npm run webpack && npm run requirejs && npm run concat && npm run uglifyjs",
     "browserify": "browserify input/commonjs/app.js -o output/browserify-build.js",
     "webpack": "webpack input/commonjs/app.js output/webpack-build.js",
     "requirejs": "node node_modules/requirejs/bin/r.js -o requirejs-config.js",
     "concat": "cat input/amd/*.js > output/concat-amd.js && cat input/commonjs/*.js > output/concat-commonjs.js",
-    "eslint": "eslint input/**/*.js"
+    "eslint": "eslint input/**/*.js",
+    "uglifyjs": "uglifyjs output/browserify-build.js -o output/browserify-build.min.js && uglifyjs output/requirejs-build.js -o output/requirejs-build.min.js && uglifyjs output/webpack-build.js -o output/webpack-build.min.js && uglifyjs output/concat-amd.js -o output/concat-amd.min.js && uglifyjs output/concat-commonjs.js -o output/concat-commonjs.min.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "browserify": "^12.0.1",
     "eslint": "^1.10.0",
     "requirejs": "^2.1.21",
+    "uglifyjs": "^2.4.10",
     "webpack": "^1.12.6"
   }
 }
